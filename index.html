@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Personnel</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            color: #101010;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        fieldset {
+            border: 2px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            text-align: center;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        datalist {
+            display: none; /* Hide datalist options */
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Qualité <abbr title="Ce champ est obligatoire">*</abbr></legend>
+            
+            <label>
+                <input type="radio" name="title" id="r1" value="mr" required> M.
+            </label>
+            <label>
+                <input type="radio" name="title" id="r2" value="ms" required> Mme
+            </label>
+
+            <label for="nom">Quel est votre nom ?</label>
+            <input type="text" id="nom" pattern="[A-Za-zÀ-ÿ\s]+" required>
+
+            <label for="prenom">Quel est votre prénom ?</label>
+            <input type="text" id="prenom" pattern="[A-Za-zÀ-ÿ\s]+" required>
+
+            <label for="dateNaissance">Quelle est votre date de naissance ?</label>
+            <input type="date" id="dateNaissance" required>
+
+            <label for="age">Quel est votre âge ?</label>
+            <input type="number" id="age" min="12" max="120" required>
+
+            <label for="fruit">Quel est votre fruit favori ?</label>
+            <input type="text" id="fruit" list="fruits" required>
+            <datalist id="fruits">
+                <option value="Pomme">
+                <option value="Banane">
+                <option value="Orange">
+                <option value="Fraise">
+            </datalist>
+
+            <label for="email">Quelle est votre adresse mail ?</label>
+            <input type="email" id="email" required>
+
+            <label for="telephone">Quelle est votre téléphone ?</label>
+            <input type="tel" pattern="0[67][0-9]{8}" title="Numéro invalide (ex: 0612345678)" required>
+
+            <label for="message">Laissez un court message</label>
+            <textarea id="message" maxlength="140" rows="5" placeholder="Votre message ici..."></textarea>
+
+            <div class="buttons">
+                <button type="submit">Envoyer</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
