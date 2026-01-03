@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+        body{
+            background-color: auto;
+            color: rgb(10, 10, 10);
+            line-height: 1.6;
+            padding: 20;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    
+    <form>
+        <p>
+            <fieldset>
+            <legend>qualite <abbr title = "ce champ est obligatoire">*</abbr></legend>
+            <input type="radio" required name="title" id="r1"value ="mr"><label for="r1">M.</label>
+            <input type="radio" required name="title" id="r2"value ="ms"><label for="r2">Mme</label>
+            
+
+        </p>
+        <legend> civilite</legend>
+
+        <label for="nom">Quel est votre nom?&nbsp;</label>
+        
+        <input type="text"  id="nom" pattern="[A-Za-z]+"required>
+        <br>
+        <label for="prenom">
+            Quel est votre prenom 
+        </label>
+        <input type="text" id="prenom"pattern="[A-Za-z]*" required>
+        <br>
+        <label for="n0">
+            Quel votre date de naissance
+        </label>
+        <input type="date" id="n0" required>
+        <br>
+        <label for="n1">
+            Quel votre age
+        </label>
+        <input type="number" min="12" max="120" step="1"  id="n1" name="age" pattern="/d{2}]"required>
+        <br>
+        <label for="t1">
+            Quel est votre fruit favori&nbsp;?
+        </label>
+        <input type="text" id="t1" name="fruit" list="l1" required>
+        <br>
+        <label for="t5">
+            Quel est votre adress mail?
+        </label>
+        <input type="email" id="t5" required >
+
+        <p>
+            <label for="telephone" >Quelle est votre telephone?</label>
+            <input type="tel"
+        pattern="0[67][0-9]{8}"
+        title="numero invalide(ex:0612345678)"
+        required id="telephone"
+        >
+        </p>
+        <p>
+            <label for="t3"> laissez un court message</label><br>
+            <textarea id="t3" name="msg"maxlength="140" rows="5"></textarea>
+        </p>
+
+        <br>
+        <div class="buttons">
+            <button type="submit" id="submitbtn" >sub</button>
+        </div>
+    </fieldset>
+    </form>
+</body>
+</html>
